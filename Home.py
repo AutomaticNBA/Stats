@@ -8,5 +8,5 @@ st.title("Automatic Stats")
 st.write("Unique and Easily Accessible NBA Stats")
 
 from PIL import Image
-image = Image.open('././Desktop/SiteStats/Giannis.png')
+image = Image.open('./Files&Images/Giannis.png')
 st.image(image)

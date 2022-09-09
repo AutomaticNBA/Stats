@@ -4,8 +4,8 @@ import pandas as pd
 import plotly_express as px
 import numpy as np
 
-df = pd.read_csv('./Desktop/SiteStats/All_Yearly_Stats.csv')
-df2022 = pd.read_csv('./Desktop/SiteStats/Yearly_Stats_2022.csv')
+df = pd.read_csv('./Files&Images/All_Yearly_Stats.csv')
+df2022 = pd.read_csv('./Files&Images/Yearly_Stats_2022.csv')
 
 st.title('Create Custom Player Charts')
 
