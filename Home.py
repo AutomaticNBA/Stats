@@ -3,6 +3,11 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+st.set_page_config(
+    page_title="Multipage App",
+    page_icon="👋",
+)
+
 st.title("Automatic Stats")
 
 st.write("Unique and Easily Accessible NBA Stats")
