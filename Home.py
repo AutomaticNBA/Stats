@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 #from streamlit_option_menu import option_menu
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
+#from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 from PIL import Image
 
 st.set_page_config(
