@@ -20,7 +20,7 @@ df2 = pd.read_csv('./Files&Images/All_Outside_Scoring_Seasons.csv')
 st.subheader("Outside Scoring Seasons Since 1997")
 AgGrid(df2, height=314)
 
-image = Image.open('../Files&Images/Curry.png')
+image = Image.open('./Files&Images/Curry.png')
 st.image(image)
 
 st.write(' ')
