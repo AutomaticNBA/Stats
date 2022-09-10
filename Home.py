@@ -127,15 +127,15 @@ if selected == "Create Player Charts":
 
     if year == "Every Season":
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
-                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color_discrete_map={p1: "red", p2: "blue"})
 
         if st.checkbox('Plot Names'):
             plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
                                title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.Player)
 
 
-        plots.update_traces(marker=dict(
-            color='red'))
+        #plots.update_traces(marker=dict(
+            #color='red'))
 
 
         if st.button('Plot Chart'):
