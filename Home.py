@@ -92,7 +92,7 @@ if selected == "Create Player Charts":
 
         players_list = []
 
-        p1 = st.selectbox('Select Player 1', 'Select Player', names)
+        p1 = st.selectbox('Select Player 1', names)
 
         p2 = st.selectbox('Select Player 2', names)
 
