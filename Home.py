@@ -64,7 +64,9 @@ if selected == "Create Player Charts":
     cdf = pd.read_csv('./Files&Images/All_Yearly_Stats.csv')
     #cdf2022 = pd.read_csv('./Files&Images/Yearly_Stats_2022.csv')
 
-    st.title('Create Custom Player Charts With Stats Since 1997')
+    st.title('Create Custom Player Charts')
+
+    st.subheader("Stats Since 1997")
 
     x_axis_val = st.selectbox('Select X-Axis', options=cdf.columns[4:20])
     y_axis_val = st.selectbox('Select Y-Axis', options=cdf.columns[4:20])
@@ -704,6 +706,10 @@ if selected == "Create Player Charts":
 
 
 
+
+
+    st.subheader("Stats Since 2014")
+    st.write("Currently Unavailable")
 
 
 if selected == "Stats Explained":
