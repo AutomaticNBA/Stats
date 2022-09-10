@@ -115,7 +115,7 @@ if selected == "Create Player Charts":
             pla.append(cdf3)
 
         if p4 != "None":
-            cdf44 = cdf[(cdf['Player'] == p4)]
+            cdf4 = cdf[(cdf['Player'] == p4)]
             pla.append(cdf4)
 
         if p5 != "None":
