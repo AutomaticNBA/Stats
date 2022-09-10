@@ -80,12 +80,10 @@ if selected == "Create Player Charts":
     st.write("Double click to reset chart")
 
 
-    plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
-                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+    plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
     if st.checkbox('Plot Names'):
-        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
-                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.Player)
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.Player)
 
     if st.button('Plot Chart'):
         st.plotly_chart(plots)
