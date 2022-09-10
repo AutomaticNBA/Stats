@@ -144,7 +144,7 @@ if selected == "Create Player Charts":
             color='red'))
 
         if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
-            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "blue", "orange", "olive", "plum"])
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "lightblue", "orange", "limegreen", "plum"])
 
 
         if st.checkbox('Plot Names'):
