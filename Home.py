@@ -97,7 +97,7 @@ if selected == "Create Player Charts":
             st.plotly_chart(plots)
 
 if selected == "Stats Explained":
-    
+
     st.title('Stats Explained')
 
     st.subheader('Paint PPG/PTS/FGA')
