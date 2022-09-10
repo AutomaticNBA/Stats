@@ -719,8 +719,9 @@ if selected == "Create Player Charts":
             if st.button('Plot Chart'):
                 st.plotly_chart(plots)
 
-
-
+        st.write(" ")
+        st.write(" ")
+        st.write(" ")
         st.write(" ")
         st.write(" ")
         st.subheader("Stats Since 2014")
