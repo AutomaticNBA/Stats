@@ -70,6 +70,7 @@ if selected == "Create Player Charts":
     y_axis_val = st.selectbox('Select Y-Axis', options=cdf.columns[3:19])
 
     st.write(' ')
+    st.write(' ')
 
 
     year = st.selectbox(
@@ -80,7 +81,7 @@ if selected == "Create Player Charts":
          '2000', '1999', '1998', '1997')
     )
 
-    min_gp = st.slider("Select A Minimum Number of Games Played In A Season", 0, 82, 1)
+    min_gp = st.slider("Minimum Games Played In A Season", 0, 82, 1)
 
     cdf = cdf[cdf['GP'] >= min_gp]
 
