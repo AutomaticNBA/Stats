@@ -105,7 +105,7 @@ if selected == "Create Player Charts":
         if p1 in names:
             players_list.append(p1)
 
-        cdf = cdf[cdf['PlayerSansYear'] == players_list]
+        cdf = cdf[cdf['PlayerSansYear'] == p1]
 
 
 
