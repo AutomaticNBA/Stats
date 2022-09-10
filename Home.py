@@ -720,6 +720,11 @@ if selected == "Create Player Charts":
         st.write("Currently Unavailable")
 
 
+    if select == "Playoffs":
+        st.title("Currently Unavailable")
+
+
+
 if selected == "Stats Explained":
 
     st.title('Stats Explained')
