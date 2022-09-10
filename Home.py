@@ -96,7 +96,7 @@ if selected == "Create Player Charts":
 
     elif year == "2022":
 
-        cdf = cdf[cdf['Year'] == year]
+        cdf = cdf[cdf['Year'] == 2022]
 
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
