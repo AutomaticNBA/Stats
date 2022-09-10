@@ -80,6 +80,10 @@ if selected == "Create Player Charts":
          '2000', '1999', '1998', '1997')
     )
 
+    min_gp = st.slider("Select A Minimum Number of Games Played In A Season", 0, 82, 1)
+
+    cdf = cdf[cdf['GP'] >= min_gp]
+
     st.write("Double click to reset chart")
 
 
