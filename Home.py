@@ -106,12 +106,12 @@ if selected == "Create Player Charts":
             cdf1 = cdf[(cdf['PlayerSansYear'] == p1)]
             pla.append(cdf1)
 
-            cdf = pd.concat(pla)
 
         if p2 != "None":
             cdf2 = cdf[(cdf['PlayerSansYear'] == p2)]
             pla.append(cdf2)
 
+        if p1 != "None" or p2 != "None":
             cdf = pd.concat(pla)
 
 
@@ -125,7 +125,7 @@ if selected == "Create Player Charts":
     st.write("Double click to reset chart")
 
 
-    if year == year:
+    if year == "Every Season":
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
