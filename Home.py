@@ -103,8 +103,14 @@ if selected == "Create Player Charts":
         if p1 != "None":
             cdf1 = cdf[(cdf['PlayerSansYear'] == p1)]
 
+            if p2 != "None":
+                cdf2 = cdf[(cdf['PlayerSansYear'] == p2)]
+
         if p2 != "None":
             cdf2 = cdf[(cdf['PlayerSansYear'] == p2)]
+
+            if p1 != "None":
+                cdf1 = cdf[(cdf['PlayerSansYear'] == p1)]
 
         pla = [cdf1, cdf2]
         cdf = pd.concat(pla)
