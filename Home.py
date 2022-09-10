@@ -150,9 +150,9 @@ if selected == "Create Player Charts":
 
         cdf = cdf[cdf['GP'] >= min_gp]
 
-        age = st.slider("Select Age Range", 18,44,(18,44))
+        #age = st.slider("Select Age Range", 18,44,(18,44))
 
-        cdf = cdf[cdf['AGE'] == age ]
+        #cdf = cdf[cdf['AGE'] == age ]
 
 
 
