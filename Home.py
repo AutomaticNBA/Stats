@@ -85,7 +85,7 @@ if selected == "Create Player Charts":
 
     # Allow to select players
 
-    #names = cdf['PlayerSansYear'].unique().tolist()
+    #names = cdf['Player'].unique().tolist()
 
 
     with st.expander("Select up to 5 players"):
@@ -103,12 +103,12 @@ if selected == "Create Player Charts":
         pla = []
 
         if p1 != "None":
-            cdf1 = cdf[(cdf['PlayerSansYear'] == p1)]
+            cdf1 = cdf[(cdf['Player'] == p1)]
             pla.append(cdf1)
 
 
         if p2 != "None":
-            cdf2 = cdf[(cdf['PlayerSansYear'] == p2)]
+            cdf2 = cdf[(cdf['Player'] == p2)]
             pla.append(cdf2)
 
         if p1 != "None" or p2 != "None":
@@ -126,12 +126,12 @@ if selected == "Create Player Charts":
 
 
     if year == "Every Season":
-        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
-                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="PlayerSansYear" ,color_discrete_sequence=["red","blue"])
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player" ,color_discrete_sequence=["red","blue"])
 
         if st.checkbox('Plot Names'):
-            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
-                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.Player)
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
 
 
         #plots.update_traces(marker=dict(
@@ -145,12 +145,12 @@ if selected == "Create Player Charts":
 
         cdf = cdf[cdf['Year'] == 2022]
 
-        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
         if st.checkbox('Plot Names'):
-            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
-                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.Player)
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
 
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
