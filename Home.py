@@ -59,7 +59,7 @@ if selected == "Regular Season Shooting Stats":
 
 
 
-if selected == "Create Player Charts":
+if selected == "Create Player Charts (Regular Season)":
 
     cdf = pd.read_csv('./Files&Images/All_Yearly_Stats.csv')
     #cdf2022 = pd.read_csv('./Files&Images/Yearly_Stats_2022.csv')
@@ -706,8 +706,8 @@ if selected == "Create Player Charts":
 
 
 
-
-
+    st.write(" ")
+    st.write(" ")
     st.subheader("Stats Since 2014")
     st.write("Currently Unavailable")
 
