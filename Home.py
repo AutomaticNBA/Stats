@@ -71,7 +71,6 @@ if selected == "Create Player Charts":
 
     st.write(' ')
 
-    year_options = cdf['Year'].unique().tolist()
 
     year = st.selectbox(
         'Select A Season',
@@ -95,7 +94,9 @@ if selected == "Create Player Charts":
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
 
-    else:
+    elif year == "2022":
+
+        cdf = cdf[cdf['Year'] == year]
 
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
