@@ -21,7 +21,7 @@ with st.sidebar:
 if selected == "Home":
     st.title("Automatic Stats")
 
-    st.write("Unique and Easily Accessible NBA Stats")
+    st.write("Easily Accessible NBA Stats")
 
     from PIL import Image
 
