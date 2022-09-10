@@ -429,6 +429,280 @@ if selected == "Create Player Charts":
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
 
+    elif year == "2009":
+
+        cdf = cdf[cdf['Year'] == 2009]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2008":
+
+        cdf = cdf[cdf['Year'] == 2008]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2007":
+
+        cdf = cdf[cdf['Year'] == 2007]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2006":
+
+        cdf = cdf[cdf['Year'] == 2006]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2005":
+
+        cdf = cdf[cdf['Year'] == 2005]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2004":
+
+        cdf = cdf[cdf['Year'] == 2004]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2003":
+
+        cdf = cdf[cdf['Year'] == 2003]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2002":
+
+        cdf = cdf[cdf['Year'] == 2002]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2001":
+
+        cdf = cdf[cdf['Year'] == 2001]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "2000":
+
+        cdf = cdf[cdf['Year'] == 2000]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "1999":
+
+        cdf = cdf[cdf['Year'] == 1999]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "1998":
+
+        cdf = cdf[cdf['Year'] == 1998]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+    elif year == "1997":
+
+        cdf = cdf[cdf['Year'] == 1997]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+        if st.checkbox('Plot Names'):
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
+
+        if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
+
+
+        if st.button('Plot Chart'):
+            st.plotly_chart(plots)
+
+
 
 
 
