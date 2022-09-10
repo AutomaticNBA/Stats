@@ -770,7 +770,7 @@ if selected == "Stats Explained":
     st.write(' ')
 
     st.subheader('Outside reFG%')
-    st.write('eFG% on shots taken outside the paint minus the league average FG%.')
+    st.write('eFG% on shots taken outside the paint minus the league average eFG%.')
     st.write(' ')
     st.write(' ')
 
