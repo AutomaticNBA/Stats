@@ -15,7 +15,6 @@ with st.sidebar:
     selected = option_menu(
         menu_title=None,
         options=["Home","Regular Season Shooting Stats", 'Create Player Charts','Stats Explained'],
-        orientation="horizontal",
     )
 
 
