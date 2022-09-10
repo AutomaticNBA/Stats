@@ -92,15 +92,15 @@ if selected == "Create Player Charts":
 
         players_list = []
 
-        p1 = st.selectbox('Select Player 1', names, 'None')
+        p1 = st.selectbox('Select Player 1', names, 13000)
 
-        p2 = st.selectbox('Select Player 2', names, 'None')
+        p2 = st.selectbox('Select Player 2', names, 13000)
 
-        p3 = st.selectbox('Select Player 3', names, 'None')
+        p3 = st.selectbox('Select Player 3', names, 13000)
 
-        p4 = st.selectbox('Select Player 4', names, 'None')
+        p4 = st.selectbox('Select Player 4', names, 13000)
 
-        p5 = st.selectbox('Select Player 5', names, 'None')
+        p5 = st.selectbox('Select Player 5', names, 13000)
 
         if p1 in names:
             players_list.append(p1)
