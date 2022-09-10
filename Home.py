@@ -133,15 +133,8 @@ if selected == "Create Player Charts":
             color='red'))
 
 
-        if p1 != None:
-            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
-                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player",
-                               color_discrete_sequence=["red", "blue"])
-
-        if p2 != None:
-            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
-                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player",
-                               color_discrete_sequence=["red", "blue"])
+        if p1 != "None" or p2 != "None":
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "blue"])
 
 
         if st.checkbox('Plot Names'):
@@ -152,7 +145,7 @@ if selected == "Create Player Charts":
             st.plotly_chart(plots)
 
 
-            
+
 
     elif year == "2022":
 
