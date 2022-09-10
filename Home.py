@@ -66,8 +66,8 @@ if selected == "Create Player Charts":
 
     st.title('Create Custom Player Charts')
 
-    x_axis_val = st.selectbox('Select X-Axis', options=cdf.columns[3:19])
-    y_axis_val = st.selectbox('Select Y-Axis', options=cdf.columns[3:19])
+    x_axis_val = st.selectbox('Select X-Axis', options=cdf.columns[4:20])
+    y_axis_val = st.selectbox('Select Y-Axis', options=cdf.columns[4:20])
 
     st.write(' ')
     st.write(' ')
