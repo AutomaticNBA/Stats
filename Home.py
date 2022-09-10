@@ -133,6 +133,11 @@ if selected == "Create Player Charts":
             plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
                                title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.Player)
 
+
+        plots.update_traces(marker=dict(
+            color='red'))
+
+
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
 
