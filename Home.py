@@ -136,7 +136,9 @@ if selected == "Create Player Charts":
                 cdf = pd.concat(pla)
 
 
-
+        team = st.selectbox('Select A Team'("None","ATL", "BKN", "BOS", "CHA", "CHH", "CHI", "CLE", "DAL", "DEN", "DET", "GSW", "HOU", "IND", "LAC", "LAL", "MEM", "MIA", "MIL", "MIN", "NJN", "NOH", "NOK", "NOP", "NYK", "OKC", "ORL", "PHI", "PHX", "POR", "SAC", "SAS", "SEA", "TOR", "UTA", "VAN", "WAS"))
+        if team != "None":
+            cdf = cdf[cdf['TEAM'] == team]
 
 
         min_gp = st.slider("Minimum Games Played In A Season", 0, 82, 1)
