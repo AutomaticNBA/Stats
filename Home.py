@@ -73,14 +73,14 @@ if selected == "Create Player Charts":
 
     year_options = cdf['Year'].unique().tolist()
 
-    year = st.selectbox('Select A Season', year_options, 0)
+    a = 'Every Season'
 
-    cdf1 = cdf[cdf['Year'] == year]
+    year = st.selectbox('Select A Season', a, year_options, 0)
 
     st.write("Double click to reset chart")
 
 
-    if year == "Every Season":
+    if year == a:
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
@@ -92,13 +92,12 @@ if selected == "Create Player Charts":
             st.plotly_chart(plots)
 
     else:
+        cdf1 = cdf[cdf['Year'] == year]
 
-        plots1 = px.scatter(cdf1, x=x_axis_val, y=y_axis_val, hover_name=cdf1.Player, hover_data=['GP'],
-                           title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
+        plots1 = px.scatter(cdf1, x=x_axis_val, y=y_axis_val, hover_name=cdf1.Player, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
         if st.checkbox('Plot Names'):
-            plots1 = px.scatter(cdf1, x=x_axis_val, y=y_axis_val, hover_name=cdf1.Player, hover_data=['GP'],
-                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf1.Player)
+            plots1 = px.scatter(cdf1, x=x_axis_val, y=y_axis_val, hover_name=cdf1.Player, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf1.Player)
 
         if st.button('Plot Chart'):
             st.plotly_chart(plots1)
