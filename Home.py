@@ -61,6 +61,16 @@ if selected == "Regular Season Shooting Stats":
 
 if selected == "Create Player Charts":
 
+    with st.sidebar:
+        select = option_menu(
+            menu_title=None,
+            options=["Since 1997", "Since 2014"],
+            orientation="horizontal",
+        )
+
+    if select == "Since 1997":
+        st.write("Works")
+
     cdf = pd.read_csv('./Files&Images/All_Yearly_Stats.csv')
     #cdf2022 = pd.read_csv('./Files&Images/Yearly_Stats_2022.csv')
 
