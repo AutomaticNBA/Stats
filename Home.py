@@ -106,7 +106,7 @@ if selected == "Create Player Charts":
         pla.append(p2)
 
         if p1 != "None":
-            cdf = cdf[cdf['PlayerSansYear'] == p1]
+            cdf = cdf[cdf['PlayerSansYear'] == pla]
 
 
 
