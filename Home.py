@@ -140,6 +140,8 @@ if selected == "Create Player Charts":
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
+        plots.update_traces(marker=dict(
+            color='red'))
 
         if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
             plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
@@ -148,9 +150,6 @@ if selected == "Create Player Charts":
         if st.checkbox('Plot Names'):
             plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
                                title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
-
-        plots.update_traces(marker=dict(
-            color='red'))
 
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
@@ -164,6 +163,9 @@ if selected == "Create Player Charts":
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
+        plots.update_traces(marker=dict(
+            color='red'))
+
         if st.checkbox('Plot Names'):
             plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'],
                                title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.YearPlayer)
@@ -171,8 +173,6 @@ if selected == "Create Player Charts":
         if p1 != "None" or p2 != "None" or p3 != "None" or p4 != "None" or p5 != "None":
             plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.YearPlayer, hover_data=['GP'], title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), color="Player", color_discrete_sequence=["red", "dodgerblue", "orange", "limegreen", "violet"])
 
-        plots.update_traces(marker=dict(
-            color='red'))
 
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
