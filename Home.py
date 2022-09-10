@@ -56,10 +56,13 @@ if selected == "Regular Season Shooting Stats":
     image = Image.open('./Files&Images/Durant.png')
     st.image(image)
 
+
+
+
 if selected == "Create Player Charts":
 
     cdf = pd.read_csv('./Files&Images/All_Yearly_Stats.csv')
-    df2022 = pd.read_csv('./Files&Images/Yearly_Stats_2022.csv')
+    #df2022 = pd.read_csv('./Files&Images/Yearly_Stats_2022.csv')
 
     st.title('Create Custom Player Charts')
 
@@ -68,12 +71,15 @@ if selected == "Create Player Charts":
 
     st.write(' ')
 
+    year_options = cdf['Year'].unique().tolist()
+
     year = st.selectbox(
         'Select A Season',
-        ('Every Season', '2022')
+        ('Every Season', year_options, 0)
     )
 
     st.write("Double click to reset chart")
+
 
     if year == "Every Season":
         plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
@@ -85,16 +91,22 @@ if selected == "Create Player Charts":
 
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
+
     else:
-        plots = px.scatter(df2022, x=x_axis_val, y=y_axis_val, hover_name=df2022.Player, hover_data=['GP'],
+        cdf = cdf[cdf['Year']==year]
+
+        plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
                            title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val))
 
         if st.checkbox('Plot Names'):
-            plots = px.scatter(df2022, x=x_axis_val, y=y_axis_val, hover_name=df2022.Player, hover_data=['GP'],
-                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=df2022.Player)
+            plots = px.scatter(cdf, x=x_axis_val, y=y_axis_val, hover_name=cdf.Player, hover_data=['GP'],
+                               title=(year + ' ' + x_axis_val + ' ' + 'vs' + ' ' + y_axis_val), text=cdf.Player)
 
         if st.button('Plot Chart'):
             st.plotly_chart(plots)
+
+
+
 
 if selected == "Stats Explained":
 
