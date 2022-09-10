@@ -92,7 +92,7 @@ if selected == "Create Player Charts":
 
         players_list = []
 
-        p1 = st.selectbox('Select Player 1', names)
+        p1 = st.selectbox('Select Player 1', 'Select Player', names)
 
         p2 = st.selectbox('Select Player 2', names)
 
@@ -103,10 +103,7 @@ if selected == "Create Player Charts":
         p5 = st.selectbox('Select Player 5', names)
 
         if p1 in names:
-            p1.append(players_list)
-            
-        if p2 in names:
-            p1.append(players_list)
+            players_list.append(p1)
 
         cdf = cdf[cdf['PlayerSansYear'] == players_list]
 
