@@ -81,6 +81,29 @@ if selected == "Create Player Charts":
          '2000', '1999', '1998', '1997')
     )
 
+
+
+    # Allow to select players
+
+    names = cdf['PlayerSansYear'].unique.tolist()
+
+    if st.expander("Select up to 5 players"):
+
+        p1 = st.selectbox('Select Player 1', names, 0)
+
+        p2 = st.selectbox('Select Player 2', names, 0)
+
+        p3 = st.selectbox('Select Player 3', names, 0)
+
+        p4 = st.selectbox('Select Player 4', names, 0)
+
+        p5 = st.selectbox('Select Player 5', names, 0)
+
+        cdf = cdf[cdf['PlayerSansYear'] == p1, p2, p3, p4, p5]
+        
+
+
+
     min_gp = st.slider("Minimum Games Played In A Season", 0, 82, 1)
 
     cdf = cdf[cdf['GP'] >= min_gp]
