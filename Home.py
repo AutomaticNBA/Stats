@@ -100,8 +100,8 @@ if selected == "Create Player Charts":
 
         p5 = st.selectbox('Select Player 5', names)
 
-        if p1 in names:
-            cdf = cdf[cdf['PlayerSansYear'] == p1]
+        if p1 or p2 or p3 or p4 or p5 in names:
+            cdf = cdf[cdf['PlayerSansYear'] == p1, p2, p3, p4, p5]
 
 
 
