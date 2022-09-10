@@ -12,14 +12,18 @@ st.set_page_config(
 )
 
 with st.sidebar:
-    st.header("Browse")
+    selected = option_menu(
+        menu_title="Browse",
+        options=["Home","Regular Season Shooting Stats", 'Create Player Charts','Stats Explained']
+    )
 
 
-st.title("Automatic Stats")
+if selected == "Home":
+    st.title("Automatic Stats")
 
-st.write("Unique and Easily Accessible NBA Stats")
+    st.write("Unique and Easily Accessible NBA Stats")
 
-from PIL import Image
+    from PIL import Image
 
-image = Image.open('Giannis.png')
-st.image(image)
+    image = Image.open('Giannis.png')
+    st.image(image)
