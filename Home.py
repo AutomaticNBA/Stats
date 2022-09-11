@@ -171,7 +171,7 @@ if selected == "Create Player Charts":
         cdf = cdf[cdf['GP'] >= min_gp]
 
 
-        min = st.slider("Minimum Minutes Played", 0, 4500,1)
+        min = st.slider("Minimum Minutes Played", 0, 4500,10)
 
         cdf = cdf[cdf['MIN'] >= min ]
 
