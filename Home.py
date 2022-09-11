@@ -14,7 +14,7 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu(
         menu_title=None,
-        options=["Home","Regular Season Shooting Stats", 'Create Player Charts','Stats Explained']
+        options=["Home","Regular Season Shooting Stats", "Find Opponent eFG% and TS%", 'Create Player Charts','Stats Explained']
     )
 
 
@@ -57,6 +57,26 @@ if selected == "Regular Season Shooting Stats":
     st.image(image)
 
 
+
+
+if selected == "Find Opponent eFG% and TS%":
+    st.title("Find Regular Season Opponent eFG% and TS%")
+    st.subheader("eFG% and TS% allowed by a team in the regular season.")
+
+    yr = st.selectbox("Select Season", ("2021-22"	,"2020-21"	,"2019-20"	,"2018-19"	,"2017-18"	,"2016-17"	,"2015-16"	,"2014-15"	,"2013-14"	,"2012-13"	,"2011-12"	,"2010-11"	,"2009-10"	,"2008-09"	,"2007-08"	,"2006-07"	,"2005-06"	,"2004-05"	,"2003-04"	,"2002-03"	,"2001-02"	,"2000-01"	,"1999-00"	,"1998-99"	,"1997-98"	,"1996-97"	,"1995-96"	,"1994-95"	,"1993-94"	,"1992-93"	,"1991-92"	,"1990-91"	,"1989-90"	,"1988-89"	,"1987-88"	,"1986-87"	,"1985-86"	,"1984-85"	,"1983-84"	,"1982-83"	,"1981-82"	,"1980-81"	,"1979-80"	,"1978-79"	,"1977-78"	,"1976-77"))
+    #tm = st.selectbox("Select Team", ("ATL"	,"BOS"	,"BRK"	,"BUF"	,"CHA"	,"CHH"	,"CHI"	,"CHO"	,"CLE"	,"DAL"	,"DEN"	,"DET"	,"GSW"	,"HOU"	,"IND"	,"KCK"	,"LAC"	,"LAL"	,"MEM"	,"MIA"	,"MIL"	,"MIN"	,"NJN"	,"NOH"	,"NOJ"	,"NOK"	,"NOP"	,"NYK"	,"NYN"	,"OKC"	,"ORL"	,"PHI"	,"PHO"	,"POR"	,"SAC"	,"SAS"	,"SDC"	,"SEA"	,"TOR"	,"UTA"	,"VAN"	,"WAS"	,"WSB"))
+
+
+    yrtm = []
+
+    odf = pd.read_csv('./Files&Images/OppTS.csv')
+
+    odf = odf[odf['Season'] == yr]
+
+    AgGrid(odf, height=304)
+
+    image2 = Image.open('./Files&Images/LeBron.png')
+    st.image(image2)
 
 
 if selected == "Create Player Charts":
@@ -770,7 +790,7 @@ if selected == "Stats Explained":
     st.write(' ')
 
     st.subheader('Outside reFG%')
-    st.write('eFG% on shots taken outside the paint minus the league average eFG%.')
+    st.write('eFG% on shots taken outside the paint minus the league average FG%.')
     st.write(' ')
     st.write(' ')
 
