@@ -28,6 +28,18 @@ if selected == "Home":
     image = Image.open('Giannis.png')
     st.image(image)
 
+
+    adf = pd.read_csv('./Files&Images/All_Yearly_Stats.csv')
+
+    slc = st.multiselect("Select Player Stats To Display", ("Year", "Player", "TEAM"	,"GP"	,"Wins"	,"Losses"	,"AGE"	,"MIN"	,"MPG"	,"PPG"	,"PTS"	,"FGM"	,"FGM/G"	,"FGA"	,"FGA/G"	,"FG%"	,"3PM"	,"3PM/G"	,"3PA"	,"3PA/G"	,"3P%"	,"FTM"	,"FTM/G"	,"FTA"	,"FTA/G"	,"FT%"	,"eFG%"	,"TS%"	,"reFG%"	,"rTS%"	,"Paint PTS"	,"Paint PPG"	,"Paint FGA"	,"Paint FG%"	,"Paint rFG%"	,"Outside PPG"	," Outside GP"	,"Outside PTS"	,"Outside FGA"	,"Outside eFG%"	,"Outside reFG%"	,"Midrange PPG"	,"Midrange PTS"	,"Midrange FGA"	,"Midrange FG%"	,"Midrange rFG%"	,"OREB"	,"ORPG"	,"DREB"	,"DRPG"	,"REB"	,"RPG"	,"AST"	,"APG"	,"TOV"	,"TOV/G"	,"STL"	,"SPG"	,"BLK"	,"BPG"	,"Fouls"	,"Fouls/G"	,"Fantasy Points"	,"Fantasy Points/G"	,"Double Doubles"	,"Triple Doubles"	,"Plus Minus"	,"Plus Minus/G"),
+                         default=['Year', 'Player'])
+
+    adf = adf[slc]
+
+
+    AgGrid(adf, height=304)
+
+
 if selected == "Regular Season Shooting Stats":
     st.title("Regular Season Shooting Stats")
 
@@ -170,10 +182,9 @@ if selected == "Create Player Charts":
 
         cdf = cdf[cdf['GP'] >= min_gp]
 
+        #age = st.slider("Select Age Range", 18,44,(18,44))
 
-        min = st.slider("Minimum Minutes Played", 0, 4500,1,step=10)
-
-        cdf = cdf[cdf['MIN'] >= min ]
+        #cdf = cdf[cdf['AGE'] == age ]
 
 
 
