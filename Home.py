@@ -182,10 +182,64 @@ if selected == "Create Player Charts":
 
         cdf = cdf[cdf['GP'] >= min_gp]
 
-        #age = st.slider("Select Age Range", 18,44,(18,44))
+        min = st.slider("Minimum Total Minutes Played", 0,4500,1,step=10)
 
-        #cdf = cdf[cdf['AGE'] == age ]
+        cdf = cdf[cdf['MIN'] >= min ]
 
+
+
+        with st.expander("Select Up To 3 Custom Minimum Filters"):
+
+            filt1 = st.selectbox("Custom Minimum Filter 1", (
+            "None", "Wins", "Losses", "AGE", "MPG", "PPG", "PTS", "FGM", "FGM/G", "FGA", "FGA/G", "FG%", "3PM", "3PM/G",
+            "3PA", "3PA/G", "3P%", "FTM", "FTM/G", "FTA", "FTA/G", "FT%", "eFG%", "TS%", "reFG%", "rTS%", "Paint PTS",
+            "Paint PPG", "Paint FGA", "Paint FG%", "Paint rFG%", "Outside PPG", " Outside GP", "Outside PTS",
+            "Outside FGA", "Outside eFG%", "Outside reFG%", "Midrange PPG", "Midrange PTS", "Midrange FGA",
+            "Midrange FG%", "Midrange rFG%", "OREB", "ORPG", "DREB", "DRPG", "REB", "RPG", "AST", "APG", "TOV", "TOV/G",
+            "STL", "SPG", "BLK", "BPG", "Fouls", "Fouls/G", "Fantasy Points", "Fantasy Points/G", "Double Doubles",
+            "Triple Doubles", "Plus Minus", "Plus Minus/G"))
+
+            if filt1 != "None":
+                num1 = st.number_input(f"Minimum {filt1}",step=1)
+                cdf = cdf[cdf[filt1] >= num1]
+
+            st.write("")
+            st.write("")
+
+            filt2 = st.selectbox("Custom Minimum Filter 2", (
+                "None", "Wins", "Losses", "AGE", "MPG", "PPG", "PTS", "FGM", "FGM/G", "FGA", "FGA/G", "FG%", "3PM",
+                "3PM/G",
+                "3PA", "3PA/G", "3P%", "FTM", "FTM/G", "FTA", "FTA/G", "FT%", "eFG%", "TS%", "reFG%", "rTS%",
+                "Paint PTS",
+                "Paint PPG", "Paint FGA", "Paint FG%", "Paint rFG%", "Outside PPG", " Outside GP", "Outside PTS",
+                "Outside FGA", "Outside eFG%", "Outside reFG%", "Midrange PPG", "Midrange PTS", "Midrange FGA",
+                "Midrange FG%", "Midrange rFG%", "OREB", "ORPG", "DREB", "DRPG", "REB", "RPG", "AST", "APG", "TOV",
+                "TOV/G",
+                "STL", "SPG", "BLK", "BPG", "Fouls", "Fouls/G", "Fantasy Points", "Fantasy Points/G", "Double Doubles",
+                "Triple Doubles", "Plus Minus", "Plus Minus/G"))
+
+            if filt2 != "None":
+                num2 = st.number_input(f"Minimum {filt2}", step=1)
+                cdf = cdf[cdf[filt2] >= num2]
+
+            st.write("")
+            st.write("")
+
+            filt3 = st.selectbox("Custom Minimum Filter 3", (
+                "None", "Wins", "Losses", "AGE", "MPG", "PPG", "PTS", "FGM", "FGM/G", "FGA", "FGA/G", "FG%", "3PM",
+                "3PM/G",
+                "3PA", "3PA/G", "3P%", "FTM", "FTM/G", "FTA", "FTA/G", "FT%", "eFG%", "TS%", "reFG%", "rTS%",
+                "Paint PTS",
+                "Paint PPG", "Paint FGA", "Paint FG%", "Paint rFG%", "Outside PPG", " Outside GP", "Outside PTS",
+                "Outside FGA", "Outside eFG%", "Outside reFG%", "Midrange PPG", "Midrange PTS", "Midrange FGA",
+                "Midrange FG%", "Midrange rFG%", "OREB", "ORPG", "DREB", "DRPG", "REB", "RPG", "AST", "APG", "TOV",
+                "TOV/G",
+                "STL", "SPG", "BLK", "BPG", "Fouls", "Fouls/G", "Fantasy Points", "Fantasy Points/G", "Double Doubles",
+                "Triple Doubles", "Plus Minus", "Plus Minus/G"))
+
+            if filt3 != "None":
+                num3 = st.number_input(f"Minimum {filt3}", step=1)
+                cdf = cdf[cdf[filt3] >= num3]
 
 
         st.write("Double click to reset chart")
