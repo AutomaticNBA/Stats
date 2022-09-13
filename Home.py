@@ -143,23 +143,23 @@ if selected == "Create Player Charts":
 
             if p14 != "None":
                 cdf14 = cdf2014[(cdf2014['Player'] == p14)]
-                pla.append(cdf14)
+                pla4.append(cdf14)
 
             if p24 != "None":
                 cdf24 = cdf2014[(cdf2014['Player'] == p24)]
-                pla.append(cdf24)
+                pla4.append(cdf24)
 
             if p34 != "None":
                 cdf34 = cdf2014[(cdf2014['Player'] == p34)]
-                pla.append(cdf34)
+                pla4.append(cdf34)
 
             if p44 != "None":
                 cdf44 = cdf2014[(cdf2014['Player'] == p44)]
-                pla.append(cdf44)
+                pla4.append(cdf44)
 
             if p54 != "None":
                 cdf54 = cdf2014[(cdf2014['Player'] == p54)]
-                pla.append(cdf54)
+                pla4.append(cdf54)
 
             if p14 != "None" or p24 != "None" or p34 != "None" or p44 != "None" or p54 != "None":
                 cdf2014 = pd.concat(pla4)
