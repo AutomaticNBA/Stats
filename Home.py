@@ -5,6 +5,12 @@ import plotly.graph_objects as go
 from streamlit_option_menu import option_menu
 from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
 from PIL import Image
+#import kaggle.cli
+import sys, requests
+from pathlib import Path
+from zipfile import ZipFile
+import urllib
+
 
 st.set_page_config(
     page_title="Automatic Stats",
@@ -35,6 +41,35 @@ if selected == "Home":
                          default=['Year', 'Player'])
 
     adf2014 = adf2014[slc]
+
+    with st.expander("Select Up To 3 Custom Minimum Filters"):
+
+        filthome1 = st.selectbox("Custom Minimum Filter 1", (slc))
+
+        if filthome1 != 'Year':
+            if filthome1 != 'Player':
+                numhome1 = st.number_input(f"Minimum {filthome1}", step=1)
+                adf2014 = adf2014[adf2014[filthome1] >= numhome1]
+
+        st.write("")
+        st.write("")
+
+        filthome2 = st.selectbox("Custom Minimum Filter 2", (slc))
+
+        if filthome2 != "Year":
+            if filthome1 != 'Player':
+                numhome2 = st.number_input(f"Minimum {filthome2}", step=1)
+                adf2014 = adf2014[adf2014[filthome2] >= numhome2]
+
+        st.write("")
+        st.write("")
+
+        filthome3 = st.selectbox("Custom Minimum Filter 3", (slc))
+
+        if filthome3 != "Year":
+            if filthome1 != 'Player':
+                numhome3 = st.number_input(f"Minimum {filthome3}", step=1)
+                adf2014 = adf2014[adf2014[filthome3] >= numhome3]
 
 
     AgGrid(adf2014, height=304)
