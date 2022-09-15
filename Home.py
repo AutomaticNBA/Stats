@@ -28,8 +28,15 @@ if selected == "Home":
     st.title("Automatic Stats")
 
     st.write("Easily Accessible NBA Stats")
+    
 
-    from PIL import Image
+    
+
+    
+    
+    
+    
+    
 
     image = Image.open('Giannis.png')
     st.image(image)
@@ -240,7 +247,7 @@ if selected == "Create Player Charts":
                 cdf2014 = cdf2014[cdf2014[filt34] >= num34]
 
 
-        st.write("Double click to reset chart")
+        st.write("Double click the chart to reset")
 
 
         if year2014 == "Every Season":
@@ -257,6 +264,7 @@ if selected == "Create Player Charts":
             if st.checkbox('Plot Names?'):
                 plots2014 = px.scatter(cdf2014, x=x_axis_val2014, y=y_axis_val2014, hover_name=cdf2014.YearPlayer, hover_data=['GP'],
                                    title=(year2014 + ' ' + x_axis_val2014 + ' ' + 'vs' + ' ' + y_axis_val2014), text=cdf2014.YearPlayer)
+
 
             if st.button('Plot Chart!'):
                 st.plotly_chart(plots2014)
@@ -282,8 +290,52 @@ if selected == "Create Player Charts":
                 plots2014 = px.scatter(cdf2014, x=x_axis_val2014, y=y_axis_val2014, hover_name=cdf2014.YearPlayer, hover_data=['GP'],
                                    title=(year2014 + ' ' + x_axis_val2014 + ' ' + 'vs' + ' ' + y_axis_val2014), text=cdf2014.YearPlayer)
 
+
+            if st.checkbox('Plot Headshots? (May Take Some Time To Load and Plot. Would Reccomend Setting Minimum Filters Before Selecting or Plotting)'):
+
+                xsizemin = float(cdf2014[x_axis_val2014].min()) + 0.5
+                ysizemin = float(cdf2014[y_axis_val2014].min()) + 0.5
+
+                xsizemax = float(cdf2014[x_axis_val2014].max()) + 0.1
+                ysizemax = float(cdf2014[y_axis_val2014].max()) + 0.1
+
+                if abs(xsizemin) <= abs(ysizemin):
+                    size = abs(st.slider("Adjust Headshot Size (May have to adjust if images are too big or small)", (xsizemax-xsizemin), xsizemax, (xsizemin+(xsizemax/10))))
+
+                elif abs(ysizemin) <= abs(xsizemin):
+                    size = abs(st.slider("Adjust Headshot Size (May have to adjust if images are too big or small)", (ysizemax-ysizemin), ysizemax,(ysizemin+(xsizemax/10))))
+
+
+                players2022 = [" Aaron Gordon"	," Aaron Henry"	," Aaron Holiday"	," Aaron Nesmith"	," Aaron Wiggins"	," Abdel Nader"	," Ade Murkey"	," Admiral Schofield"	," Ahmad Caver"	," Al Horford"	," Alec Burks"	," Aleem Ford"	," Alekesej Pokusevski"	," Alex Caruso"	," Alex Len"	," Alfonzo McKinnie"	," Alize Johnson"	," Alperen Sengun"	," Amir Coffey"	," Andre Drummond"	," Andre Iguodala"	," Andrew Wiggins"	," Anfernee Simons"	," Anthony Davis"	," Anthony Edwards"	," Anthony Gill"	," Anthony Lamb"	," Armoni Brooks"	," Arnoldas Kulboka"	," Austin Reaves"	," Austin Rivers"	," Avery Bradley"	," Ayo Dosunmu"	," Bam Adebayo"	," Ben McLemore"	," Bismack Biyombo"	," BJ Johnson"	," Blake Griffin"	," Boban Marjanovic"	," Bobby Portis"	," Bogdan Bogdanovic"	," Bojan Bogdanovic"	," Bol Bol"	," Bones Hyland"	," Brad Wanamaker"	," Bradley Beal"	," Brandon Boston"	," Brandon Clarke"	," Brandon Goodwin"	," Brandon Ingram"	," Brandon Knight"	," Brandon Williams"	," Braxton Key"	," Brodric Thomas"	," Brook Lopez"	," Bruce Brown"	," Bruno Fernando"	," Bryn Forbes"	," Buddy Hield"	," Cade Cunningham"	," Caleb Martin"	," Cam Reddish"	," Cam Thomas"	," Cameron Johnson"	," Cameron McGriff"	," Cameron Oliver"	," Cameron Payne"	," Caris LeVert"	," Carlik Jones"	," Carmelo Anthony"	," Carsen Edwards"	," Cassius Stanley"	," Cassius Winston"	," Cat Barber"	," Cedi Osman"	," Chandler Hutchison"	," Charles Bassey"	," Charlie Brown Jr."	," Chaundee Brown Jr."	," Cheick Diallo"	," Chimezie Metu"	," Chris Boucher"	," Chris Chiozza"	," Chris Duarte"	," Chris Paul"	," Chris Silva"	," Christian Wood"	," Chuma Okeke"	," CJ Elleby"	," CJ McCollum"	," CJ Miles"	," Clint Capela"	," Coby White"	," Cody Martin"	," Cody Zeller"	," Cole Anthony"	," Collin Sexton"	," Corey Kispert"	," Cory Joseph"	," Craig Sword"	," D.J. Augustin"	," D.J. Wilson"	," D'Angelo Russell"	," Daishen Nix"	," Dakota Mathias"	," Dalano Banton"	," Damian Jones"	," Damian Lillard"	," Damion Lee"	," Damyean Dotson"	," Daniel Gafford"	," Daniel Oturu"	," Daniel Theis"	," Danilo Gallinari"	," Danny Green"	," Danuel House Jr."	," DaQuan Jeffries"	," Darius Bazley"	," Darius Garland"	," Darren Collison"	," David Duke Jr."	," David Johnson"	," David Nwaba"	," Davion Mitchell"	," Davis Bertans"	," Davon Reed"	," Day'Ron Sharpe"	," De'Aaron Fox"	," De'Andre Hunter"	," De'Anthony Melton"	," Dean Wade"	," Deandre Ayton"	," DeAndre Jordan"	," DeAndre' Bembry"	," Deividas Sirvydis"	," DeJon Jarreau"	," Dejounte Murray"	," Delon Wright"	," DeMar DeRozan"	," DeMarcus Cousins"	," Deni Avdija"	," Dennis Schroder"	," Dennis Smith Jr."	," Denzel Valentine"	," Derrick Favors"	," Derrick Jones Jr."	," Derrick Rose"	," Derrick Walton Jr."	," Derrick White"	," Desmond Bane"	," Devin Booker"	," Devin Cannady"	," Devin Vassell"	," Devon Dotson"	," Devontae Cacok"	," Devonte' Graham"	," Dewayne Dedmon"	," Didi Louzada"	," Dillon Brooks"	," Domantas Sabonis"	," Donovan Mitchell"	," Donte DiVincenzo"	," Dorian Finney-Smith"	," Doug McDermott"	," Draymond Green"	," Drew Eubanks"	," Duane Washington Jr."	," Duncan Robinson"	," Dwight Howard"	," Dwight Powell"	," Dylan Windler"	," Ed Davis"	," Elfrid Payton"	," Elijah Hughes"	," Emanuel Terry"	," Emmanuel Mudiay"	," Enes Freedom"	," Eric Bledsoe"	," Eric Gordon"	," Eric Paschall"	," Eugene Omoruyi"	," Evan Fournier"	," Evan Mobley"	," Facundo Campazzo"	," Feron Hunt"	," Frank Jackson"	," Frank Kaminsky"	," Frank Ntilikina"	," Franz Wagner"	," Fred VanVleet"	," Freddie Gillespie"	," Furkan Korkmaz"	," Gabe Vincent"	," Gabe York"	," Gabriel Deck"	," Gabriel Lundberg"	," Garrett Temple"	," Garrison Mathews"	," Gary Clark"	," Gary Harris"	," Gary Payton II"	," Gary Trent Jr."	," George Hill"	," George King"	," Georges Niang"	," Georgios Kalaitzakis"	," Giannis Antetokounmpo"	," Goga Bitadze"	," Goran Dragic"	," Gordon Hayward"	," Gorgui Dieng"	," Grant Williams"	," Grayson Allen"	," Greg Brown III"	," Greg Monroe"	," Hamidou Diallo"	," Harrison Barnes"	," Hassan Whiteside"	," Hassani Gravett"	," Haywood Highsmith"	," Herbert Jones"	," Ignas Brazdeikis"	," Immanuel Quickley"	," Isaac Bonga"	," Isaac Okoro"	," Isaiah Hartenstein"	," Isaiah Jackson"	," Isaiah Joe"	," Isaiah Livers"	," Isaiah Roby"	," Isaiah Stewart"	," Isaiah Thomas"	," Isaiah Todd"	," Ish Smith"	," Ish Wainright"	," Ivica Zubac"	," Ja Morant"	," Jabari Parker"	," Jaden McDaniels"	," Jaden Springer"	," Jae Crowder"	," Jae'Sean Tate"	," Jahmi'us Ramsey"	," Jaime Echenique"	," Jake Layman"	," Jakob Poeltl"	," Jalen Brunson"	," Jalen Green"	," Jalen Johnson"	," Jalen McDaniels"	," Jalen Smith"	," Jalen Suggs"	," James Bouknight"	," James Ennis III"	," James Harden"	," James Johnson"	," Jamorko Pickett"	," JaMychal Green"	," JaQuori McLaughlin"	," Jared Butler"	," Jared Harper"	," Jaren Jackson Jr."	," Jarred Vanderbilt"	," Jarrett Allen"	," Jarrett Culver"	," Jarron Cumberland"	," JaVale McGee"	," Javin DeLaurier"	," Javonte Green"	," Javonte Smart"	," Jaxson Hayes"	," Jay Huff"	," Jay Scrubb"	," Jaylen Brown"	," Jaylen Hoard"	," Jaylen Morris"	," Jaylen Nowell"	," Jaysean Paige"	," Jayson Tatum"	," Jeff Dowtin"	," Jeff Green"	," Jemerrio Jones"	," Jerami Grant"	," Jeremiah Robinson-Earl"	," Jeremy Lamb"	," Jericho Sims"	," Jevon Carter"	," Jimmy Butler"	," Jock Landale"	," Joe Harris"	," Joe Ingles"	," Joe Johnson"	," Joe Wieskamp"	," Joel Ayayi"	," Joel Embiid"	," John Collins"	," John Konchar"	," Jon Teske"	," Jonas Valanciunas"	," Jonathan Kuminga"	," Jordan Bell"	," Jordan Clarkson"	," Jordan Goodwin"	," Jordan McLaughlin"	," Jordan Nwora"	," Jordan Poole"	," Jordan Schakel"	," Jose Alvarado"	," Josh Christopher"	," Josh Giddey"	," Josh Green"	," Josh Hart"	," Josh Jackson"	," Josh Okogie"	," Josh Richardson"	," Joshua Primo"	," Jrue Holiday"	," JT Thor"	," Juan Toscano-Anderson"	," Juancho Hernangomez"	," Julius Randle"	," Justin Anderson"	," Justin Champagnie"	," Justin Holiday"	," Justin Jackson"	," Justin Robinson"	," Justise Winslow"	," Jusuf Nurkic"	," Juwan Morgan"	," Kai Jones"	," Karl-Anthony Towns"	," Keifer Sykes"	," Keita Bates-Diop"	," Kelan Martin"	," Keldon Johnson"	," Keljin Blevins"	," Kelly Olynyk"	," Kelly Oubre Jr."	," Kemba Walker"	," Kenrich Williams"	," Kent Bazemore"	," Kentavious Caldwell-Pope"	," Kenyon Martin Jr."	," Keon Johnson"	," Kessler Edwards"	," Kevin Durant"	," Kevin Huerter"	," Kevin Knox II"	," Kevin Love"	," Kevin Pangos"	," Kevin Porter Jr."	," Kevon Looney"	," Khem Birch"	," Khris Middleton"	," Killian Hayes"	," Killian Tillie"	," Kira Lewis Jr."	," Klay Thompson"	," Kris Dunn"	," Kristaps Porzingis"	," Kyle Anderson"	," Kyle Guy"	," Kyle Kuzma"	," Kyle Lowry"	," Kyrie Irving"	," KZ Okpala"	," Lamar Stevens"	," LaMarcus Aldridge"	," LaMelo Ball"	," Lance Stephenson"	," Landry Shamet"	," Langston Galloway"	," Larry Nance Jr."	," Lauri Markkanen"	," Leandro Bolmaro"	," LeBron James"	," Lindell Wigginton"	," Lindy Waters III"	," Lonnie Walker IV"	," Lonzo Ball"	," Lou Williams"	," Louis King"	," Luguentz Dort"	," Luka Doncic"	," Luka Garza"	," Luke Kennard"	," Luke Kornet"	," M.J. Walker"	," Mac McClung"	," Malachi Flynn"	," Malcolm Brogdon"	," Malcolm Hill"	," Malik Beasley"	," Malik Fitts"	," Malik Monk"	," Malik Newman"	," Mamadi Diakite"	," Marcus Garrett"	," Marcus Morris Sr."	," Marcus Smart"	," Markelle Fultz"	," Markieff Morris"	," Marko Simonovic"	," Markus Howard"	," Marquese Chriss"	," Marvin Bagley III"	," Mason Jones"	," Mason Plumlee"	," Matisse Thybulle"	," Matt Mooney"	," Matt Ryan"	," Matt Thomas"	," Maurice Harkless"	," Max Strus"	," Maxi Kleber"	," McKinley Wright IV"	," Melvin Frazier"	," Micah Potter"	," Michael Porter Jr."	," Mikal Bridges"	," Mike Conley"	," Mike Muscala"	," Miles Bridges"	," Miles McBride"	," Mitchell Robinson"	," Miye Oni"	," Mo Bamba"	," Monte Morris"	," Montrezl Harrell"	," Moritz Wagner"	," Moses Brown"	," Moses Moody"	," Moses Wright"	," Mychal Mulder"	," Myles Powell"	," Myles Turner"	," Naji Marshall"	," Nassir Little"	," Nate Hinton"	," Nathan Knight"	," Naz Reid"	," Neemias Queta"	," Nemanja Bjelica"	," Nerlens Noel"	," Nic Claxton"	," Nick Richards"	," Nickeil Alexander-Walker"	," Nicolas Batum"	," Nik Stauskas"	," Nikola Jokic"	," Nikola Vucevic"	," Norman Powell"	," Norvel Pelle"	," Obi Toppin"	," OG Anunoby"	," Olivier Sarr"	," Omer Yurtseven"	," Onyeka Okongwu"	," Oshae Brissett"	," Otto Porter Jr."	," P.J. Dozier"	," P.J. Tucker"	," P.J. Washington"	," Paris Bass"	," Pascal Siakam"	," Pat Connaughton"	," Patrick Beverley"	," Patrick Williams"	," Patty Mills"	," Paul George"	," Paul Millsap"	," Paul Reed"	," Paul Watson"	," Payton Pritchard"	," Petr Cornelie"	," Precious Achiuwa"	," Quentin Grimes"	," Quinndary Weatherspoon"	," R.J. Hampton"	," Rajon Rondo"	," Raul Neto"	," Rayjon Tucker"	," Reggie Bullock"	," Reggie Jackson"	," Reggie Perry"	," Richaun Holmes"	," Ricky Rubio"	," RJ Barrett"	," RJ Nembhard Jr."	," Rob Edwards"	," Robert Covington"	," Robert Williams III"	," Robert Woodard II"	," Robin Lopez"	," Rodney Hood"	," Rodney McGruder"	," Romeo Langford"	," Royce O'Neale"	," Rudy Gay"	," Rudy Gobert"	," Rui Hachimura"	," Russell Westbrook"	," Ryan Arcidiacono"	," Saben Lee"	," Saddiq Bey"	," Sam Dekker"	," Sam Hauser"	," Sam Merrill"	," Sandro Mamukelashvili"	," Santi Aldama"	," Scottie Barnes"	," Scottie Lewis"	," Scotty Hopson"	," Sekou Doumbouya"	," Semi Ojeleye"	," Serge Ibaka"	," Seth Curry"	," Shai Gilgeous-Alexander"	," Shake Milton"	," Shaq Buchanan"	," Shaquille Harrison"	," Sharife Cooper"	," Skylar Mays"	," Solomon Hill"	," Spencer Dinwiddie"	," Stanley Johnson"	," Stephen Curry"	," Sterling Brown"	," Steven Adams"	," Svi Mykhailiuk"	," T.J. McConnell"	," Tacko Fall"	," Taj Gibson"	," Talen Horton-Tucker"	," Taurean Prince"	," Terance Mann"	," Terence Davis"	," Terrence Ross"	," Terry Rozier"	," Terry Taylor"	," Thaddeus Young"	," Thanasis Antetokounmpo"	," Theo Maledon"	," Theo Pinson"	," Thomas Bryant"	," Tim Frazier"	," Tim Hardaway Jr."	," Timothe Luwawu-Cabarrot"	," Tobias Harris"	," Tomas Satoransky"	," Tony Bradley"	," Tony Snell"	," Torrey Craig"	," Trae Young"	," Trayvon Palmer"	," Tre Jones"	," Tre Mann"	," Tremont Waters"	," Trendon Watford"	," Trent Forrest"	," Trevelin Queen"	," Trevon Scott"	," Trevor Ariza"	," Trey Burke"	," Trey Lyles"	," Trey Murphy III"	," Tristan Thompson"	," Troy Brown Jr."	," Ty Jerome"	," Tyler Cook"	," Tyler Hall"	," Tyler Herro"	," Tyler Johnson"	," Tyrell Terry"	," Tyrese Haliburton"	," Tyrese Maxey"	," Tyrone Wallace"	," Tyus Jones"	," Udoka Azubuike"	," Udonis Haslem"	," Usman Garuba"	," Vernon Carey Jr."	," Victor Oladipo"	," Vit Krejci"	," Vlatko Cancar"	," Wayne Ellington"	," Wayne Selden"	," Wendell Carter Jr."	," Wenyen Gabriel"	," Wes Iwundu"	," Wesley Matthews"	," Will Barton"	," Willie Cauley-Stein"	," Willy Hernangomez"	," Xavier Moon"	," Xavier Sneed"	," Xavier Tillman Sr."	," Yuta Watanabe"	," Yves Pons"	," Zach Collins"	," Zach LaVine"	," Zavier Simpson"	," Zeke Nnaji"	," Ziaire Williams"	," Zylan Cheatham"]
+
+                a = cdf2014['Player']
+                lst = list(a)
+
+
+                for player in players2022:
+                    if player in lst:
+                        x_row0 = cdf2014[cdf2014['YearPlayer'] == '2022' + player]
+                        x_stat0 = x_row0[x_axis_val2014]
+                        x_value0 = float(x_stat0)
+
+                        y_row0 = cdf2014[cdf2014['YearPlayer'] == '2022' + player]
+                        y_stat0 = y_row0[y_axis_val2014]
+                        y_value0 = float(y_stat0)
+
+
+                        plots2014.layout.update(height=750, width=750)
+                        plots2014.add_layout_image(x=x_value0, y=y_value0, source=Image.open("2022nbaplayers/"+player+".png"), xref="x", yref="y", sizex=size, sizey=size, xanchor="center", yanchor="middle")
+
+
             if st.button('Plot Chart!'):
                 st.plotly_chart(plots2014)
+
+
+
+
+
+
+
 
 
 
