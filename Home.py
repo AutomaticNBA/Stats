@@ -291,7 +291,7 @@ if selected == "Create Player Charts":
                                    title=(year2014 + ' ' + x_axis_val2014 + ' ' + 'vs' + ' ' + y_axis_val2014), text=cdf2014.YearPlayer)
 
 
-            if st.checkbox('Plot Headshots? (May Take Some Time To Load and Plot. Would Reccomend Setting Minimum Filters Before Selecting or Plotting)'):
+            if st.checkbox('Plot Headshots? (Work In Progress. May Take Some Time To Load and Plot. Would Reccomend Setting Hard Minimum Filters Before Selecting or Plotting)'):
 
                 xsizemin = float(cdf2014[x_axis_val2014].min()) + 0.5
                 ysizemin = float(cdf2014[y_axis_val2014].min()) + 0.5
